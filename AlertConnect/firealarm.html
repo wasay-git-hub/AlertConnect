@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Alarm Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .checkbox-group input {
+            margin-right: 10px;
+        }
+        .submit-btn {
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .submit-btn:hover {
+            background-color: #ff6347;
+        }
+        .header {
+            text-align: center;
+            color: #ff4500;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 align="center">
+            ALERTCONNECT <sup>&copy;</sup>
+        <a href="ict_project.html"><img src="logo2.jpg" alt="logo" align = "left" height="80"></a>
+        </h1>
+        </h1>
+        <h2 align="center">
+            <small>
+            Safe City: a police-public interaction platform
+            </small>
+        </h2>
+    </header>
+    <div class="form-container">
+        <h1 class="header">Fire Alarm System Registration</h1>
+        
+        <form action="page5.html" method="post">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+            </div>
+
+            <div class="form-group">
+                <label for="address">Home Address:</label>
+                <input type="text" id="address" name="address" required placeholder="Enter your complete address">
+            </div>
+
+            <div class="form-group">
+                <label for="alarm-brand">Fire Alarm Brand:</label>
+                <select id="alarm-brand" name="alarm-brand" required>
+                    <option value="">Select Fire Alarm Brand</option>
+                    <option value="nest">Nest Protect</option>
+                    <option value="first-alert">First Alert</option>
+                    <option value="kidde">Kidde</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="alarm-serial">Fire Alarm Serial Number:</label>
+                <input type="text" id="alarm-serial" name="alarm-serial" required placeholder="Enter fire alarm serial number">
+            </div>
+
+            <div class="form-group">
+                <label for="installation-date">Installation Date:</label>
+                <input type="date" id="installation-date" name="installation-date" required>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="smart-connect" name="smart-connect">
+                <label for="smart-connect">Enable Smart Connectivity (Wi-Fi/Cellular)</label>
+            </div>
+
+            <div class="form-group">
+                <label for="emergency-contact">Emergency Contact Number:</label>
+                <input type="tel" id="emergency-contact" name="emergency-contact" required placeholder="Enter emergency contact number">
+            </div>
+
+            <button type="submit" class="submit-btn">Register Fire Alarm</button>
+        </form>
+    </div>
+</body>
+</html>

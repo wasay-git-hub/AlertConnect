@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Important Notifications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            color: #d32f2f;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 3px solid #d32f2f;
+            margin-bottom: 30px;
+        }
+
+        h4 {
+            background-color: #fff;
+            padding: 15px 70px;
+            margin: 30px 0;
+            border-left: 5px solid #d32f2f;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        h4:hover {
+            transform: translateX(100px);
+            background-color: #fff5f5;
+        }
+
+       
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 80%;
+            max-height: 80%;
+            overflow: auto;
+            position: relative;
+        }
+
+        .modal img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 44px;
+            cursor: pointer;
+            color: #f70000;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h4 {
+                font-size: 16px;
+                padding: 12px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>IMPORTANT NOTIFICATIONS</h1>
+    
+    <h4 data-image="https://wenewsenglish.pk/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-24-at-11.22.35-PM.jpeg">Due to ongoing political activities, all educational institutes in Islamabad are closed</h4>
+    
+    <h4 data-image="https://scontent.fisb6-1.fna.fbcdn.net/v/t39.30808-6/468143416_18006838469667597_6769378630274103548_n.jpg?stp=dst-jpg_p526x296&_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=0e4i-_qoWW0Q7kNvgENwcbq&_nc_zt=23&_nc_ht=scontent.fisb6-1.fna&_nc_gid=A28XimTCVi55DqyCyyR93ry&oh=00_AYB-UKQWUWA-C42Jh1mv7ou0ie2fx9r1gzAqtjmyK5uyvw&oe=6749E21A">Due to ongoing political activities, all public transport in Islamabad is suspended</h4>
+    
+    
+    <h4 data-image="https://i.aaj.tv/large/2024/11/22173138159c97e.webp">Due to ongoing political activities, Motorways are closed till any further notice</h4>
+    
+    <h4 data-image="https://vocalpakistan.com/wp-content/uploads/2024/10/Notification-of-Public-Holidays-and-Security-Measures-in-Islamabad-for-SCO-Summit-2024-1086x1536.jpg">Due to ongoing political activities, SECTION - 144 is imposed in Islamabad</h4>
+
+    <!-- Modal -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <button class="close-button">&times;</button>
+            <img id="modalImage" src="" alt="Notification Image">
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeButton = document.querySelector('.close-button');
+        const notifications = document.querySelectorAll('h4');
+
+        notifications.forEach(notification => {
+            notification.addEventListener('click', () => {
+                modal.style.display = 'flex';
+                modalImg.src = notification.dataset.image;
+            });
+        });
+
+        closeButton.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
